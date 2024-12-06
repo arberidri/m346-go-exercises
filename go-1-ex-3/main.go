@@ -9,21 +9,20 @@ import (
 
 func main() {
 	rand.Seed(time.Now().UnixNano())
-	var eyes = rand.Intn(6) + 1
-	var when = time.Now()
+	eyes := rand.Intn(6) + 1
+	when := time.Now()
 
 	// TODO: use fmt.Fprintln instead!
 	fmt.Fprintln(os.Stdout, "the dice shows", eyes, "eyes")
-
 	// TODO: use fmt.Fprintln instead!
 	fmt.Fprintln(os.Stderr, "the dice was rolled at", when)
 
 	// TODO: how to write the output into eyes.txt and dice.log?
-	eyesFile, _ := os.Create("eyes.txt")
-	defer eyesFile.Close()
-	fmt.Fprintln(eyesFile, "the dice shows", eyes, "eyes")
+	fmt.Fprintln(createFile("eyes.txt"), "the dice shows", eyes, "eyes")
+	fmt.Fprintln(createFile("dice.log"), "the dice was rolled at", when)
+}
 
-	diceLogFile, _ := os.Create("dice.log")
-	defer diceLogFile.Close()
-	fmt.Fprintln(diceLogFile, "the dice was rolled at", when)
+func createFile(name string) *os.File {
+	file, _ := os.Create(name)
+	return file
 }
