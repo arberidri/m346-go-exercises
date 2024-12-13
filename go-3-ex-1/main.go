@@ -84,10 +84,15 @@ func main() {
 	rick := Person{FullName{"Rick", "Astley"}, BirthDate{6, 2, 1966}}
 	edsger := Person{FullName{"Edsger", "Dijkstra"}, BirthDate{11, 5, 1930}}
 	alan := Person{FullName{"Alan", "Turing"}, BirthDate{23, 6, 1912}}
+	arber := Person{FullName{"Arber", "Idrizaj"}, BirthDate{15, 2, 2007}}
+	hussein := Person{FullName{"Hussein", "HAammade"}, BirthDate{13, 8, 2005}}
 
 	outputWithZodiacSign(grace)
 	outputWithZodiacSign(dennis)
 	outputWithZodiacSign(rick)
 	outputWithZodiacSign(edsger)
 	outputWithZodiacSign(alan)
+	outputWithZodiacSign(arber)
+	outputWithZodiacSign(hussein)
+
 }
