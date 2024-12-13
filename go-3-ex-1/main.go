@@ -3,22 +3,58 @@ package main
 import "fmt"
 
 const (
-	Aries       = '\u2648' // Widder
-	Taurus      = '\u2649' // Stier
-	Gemini      = '\u264a' // Zwillinge
-	Cancer      = '\u264b' // Krebs
-	Leo         = '\u264c' // Löwe
-	Virgo       = '\u264d' // Jungfrau
-	Libra       = '\u264e' // Waage
-	Scorpius    = '\u264f' // Skorpion
-	Sagittarius = '\u2650' // Schütze
-	Capricornus = '\u2651' // Steinbock
-	Aquarius    = '\u2652' // Wassermann
-	Pisces      = '\u2653' // Fische
+	Aries       = '\u2648' // Widder 21.03. – 20.04
+	Taurus      = '\u2649' // Stier	21.04. – 20.05.
+	Gemini      = '\u264a' // Zwillinge	21.05. – 21.06.
+	Cancer      = '\u264b' // Krebs	22.06. – 22.07.
+	Leo         = '\u264c' // Löwe		23.07. – 23.08.
+	Virgo       = '\u264d' // Jungfrau	24.08. – 23.09.
+	Libra       = '\u264e' // Waage	24.09. – 23.10.
+	Scorpius    = '\u264f' // Skorpion		24.10. – 22.11
+	Sagittarius = '\u2650' // Schütze	23.11. – 21.12.
+	Capricornus = '\u2651' // Steinbock 	22.12. – 20.01.
+	Aquarius    = '\u2652' // Wassermann		21.01. – 19.02.
+	Pisces      = '\u2653' // Fische 	20.02. – 20.03
 )
 
 func outputWithZodiacSign(p Person) {
 	var zodiacSign rune = '?'
+	if (p.Month == 3 && p.Day >= 21) || (p.Month == 4 && p.Day <= 20) {
+		zodiacSign = Aries
+	}
+	if (p.Month == 4 && p.Day >= 21) || (p.Month == 5 && p.Day <= 20) {
+		zodiacSign = Taurus
+	}
+	if (p.Month == 5 && p.Day >= 21) || (p.Month == 6 && p.Day <= 21) {
+		zodiacSign = Gemini
+	}
+	if (p.Month == 6 && p.Day >= 22) || (p.Month == 7 && p.Day <= 22) {
+		zodiacSign = Cancer
+	}
+	if (p.Month == 7 && p.Day >= 23) || (p.Month == 8 && p.Day <= 23) {
+		zodiacSign = Leo
+	}
+	if (p.Month == 8 && p.Day >= 24) || (p.Month == 9 && p.Day <= 23) {
+		zodiacSign = Virgo
+	}
+	if (p.Month == 9 && p.Day >= 24) || (p.Month == 10 && p.Day <= 23) {
+		zodiacSign = Libra
+	}
+	if (p.Month == 10 && p.Day >= 24) || (p.Month == 11 && p.Day <= 22) {
+		zodiacSign = Scorpius
+	}
+	if (p.Month == 11 && p.Day >= 23) || (p.Month == 12 && p.Day <= 21) {
+		zodiacSign = Sagittarius
+	}
+	if (p.Month == 12 && p.Day >= 22) || (p.Month == 1 && p.Day <= 20) {
+		zodiacSign = Capricornus
+	}
+	if (p.Month == 1 && p.Day >= 21) || (p.Month == 2 && p.Day <= 19) {
+		zodiacSign = Aquarius
+	}
+	if (p.Month == 2 && p.Day >= 20) || (p.Month == 3 && p.Day <= 20) {
+		zodiacSign = Pisces
+	}
 
 	// TODO: Assign proper value to zodiacSign using if/else branching.
 	// NOTE: The runes are defined above as constants.
