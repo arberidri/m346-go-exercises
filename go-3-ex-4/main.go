@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+var count = 0
+
 const (
 	Diamonds = '\u25c6' // Karo
 	Spades   = '\u2660' // Pik
@@ -24,7 +26,18 @@ func main() {
 	ranks := []rune{Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace}
 
 	// TODO: Loop over suits and ranks to output all combinations.
+	for _, rank := range ranks {
 
+		for _, suit := range suits {
+			fmt.Printf("%c%c ", suit, rank)
+			count++
+			if count == 4 {
+				fmt.Print("\t \n")
+				count = 0
+			}
+		}
+
+	}
 	// TODO: delete this line afterwards
-	fmt.Println(suits, ranks)
+
 }
